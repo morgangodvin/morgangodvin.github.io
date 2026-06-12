@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Morgan Godvin — Researcher, Writer, Harm Reductionist</title>
+<meta name="description" content="Morgan Godvin is a researcher and writer at the UCLA David Geffen School of Medicine and the project director of Drug Checking Los Angeles. Her work appears in JAMA and The Washington Post. Scientist and survivor, in equal measure. Based in Portland, Oregon." />
+<meta name="author" content="Morgan Godvin" />
+<meta name="theme-color" content="#f4f4ef" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Morgan Godvin — Researcher, Writer, Harm Reductionist" />
+<meta property="og:description" content="From a federal prison cell to the David Geffen School of Medicine. Research in JAMA, reporting in The Washington Post. Scientist and survivor, in equal measure." />
+<meta property="og:url" content="https://morgangodvin.com" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f3fd6'/%3E%3Cstop offset='1' stop-color='%23d6177a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='69' font-family='system-ui,Helvetica,Arial,sans-serif' font-size='45' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EMG%3C/text%3E%3C/svg%3E" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================ TOKENS ============================ */
+:root{
+  --bone:#f4f4ef; --paper:#ffffff; --ink:#12121a; --muted:#5a5a66;
+  --cobalt:#1f3fd6; --cobalt-dk:#172fb0; --magenta:#d6177a; --magenta-dk:#b30f63;
+  --line:#dcdce4; --cobalt-tint:#eceffc; --magenta-tint:#fdebf3; --panel:#0f1020;
+  --on-accent:#ffffff;
+  --serif:'Spectral',Georgia,serif; --display:'Bricolage Grotesque',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --r:16px; --r-sm:11px; --maxw:1120px;
+  --shadow:0 18px 50px rgba(18,18,26,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--cobalt);text-decoration:none}
+a:hover{text-decoration:underline}
+::selection{background:var(--magenta);color:#fff}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;left:8px;top:-56px;z-index:200;background:var(--ink);color:#fff;font-family:var(--mono);font-size:.78rem;padding:11px 16px;border-radius:10px;transition:top .15s ease}
+.skip-link:focus{top:8px;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.display{font-family:var(--display)}
+
+/* reveal (no-JS safe) */
+.reveal{opacity:1}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+
+/* ============================ NAV ============================ */
+.nav{position:sticky;top:0;z-index:100;background:rgba(244,244,239,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand:hover{text-decoration:none}
+.brand .dot{color:var(--cobalt)}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em;color:var(--muted);text-decoration:none;padding:8px 11px;border-radius:999px;text-transform:uppercase}
+.nav-links a:hover{color:var(--ink);background:var(--cobalt-tint);text-decoration:none}
+.nav-links a.active{color:var(--cobalt);font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.nav-cta{background:var(--ink)!important;color:#fff!important}
+.nav-cta:hover{background:var(--cobalt)!important}
+.nav-toggle{display:none;background:none;border:1.5px solid var(--ink);border-radius:10px;padding:8px 10px;cursor:pointer;font-family:var(--mono);font-size:.8rem;color:var(--ink)}
+@media(max-width:880px){
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--bone);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:2px;padding:12px 24px 18px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 10px;font-size:.85rem}
+  .nav-toggle{display:block}
+}
+
+/* ============================ BUTTONS ============================ */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.82rem;letter-spacing:.02em;font-weight:500;padding:14px 24px;border-radius:999px;cursor:pointer;text-decoration:none;border:1.6px solid transparent;transition:transform .12s ease,background .15s ease,color .15s ease}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn--solid{background:var(--cobalt);color:#fff}
+.btn--solid:hover{background:var(--cobalt-dk)}
+.btn--magenta{background:var(--magenta);color:#fff}
+.btn--magenta:hover{background:var(--magenta-dk)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn--ghost:hover{border-color:var(--cobalt);color:var(--cobalt)}
+.btn--light{background:#fff;color:var(--ink);border-color:var(--line)}
+
+/* ============================ SECTION SCAFFOLD ============================ */
+section{padding:84px 0}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--magenta);display:flex;align-items:center;gap:12px;margin:0 0 18px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--magenta);display:inline-block}
+h2.sec{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,4.2vw,2.9rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 16px}
+.sec-intro{color:var(--muted);max-width:640px;font-size:1.08rem;margin:0 0 36px}
+
+/* ============================ HERO ============================ */
+.hero{position:relative;overflow:hidden;padding:96px 0 78px}
+.hero::before{content:"";position:absolute;inset:0;background:
+   radial-gradient(60% 70% at 88% -5%, rgba(214,23,122,.13), transparent 60%),
+   radial-gradient(55% 65% at 5% 110%, rgba(31,63,214,.16), transparent 60%);pointer-events:none}
+.hero-in{position:relative}
+.hero .eyebrow{color:var(--cobalt)}
+.hero .eyebrow::before{background:var(--cobalt)}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.7rem,7.2vw,5.4rem);line-height:.98;letter-spacing:-.04em;margin:0 0 26px;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--cobalt)}
+.hero .lede{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.55rem);color:#2c2c39;max-width:30ch;line-height:1.4;margin:0 0 34px}
+@media(min-width:760px){.hero .lede{max-width:46ch}}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;align-items:center}
+.hero-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+/* hero is text-only — single column */
+.hero-portrait{margin:0}
+.hero-portrait img{width:100%;max-width:420px;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:20px;box-shadow:var(--shadow);display:block;margin-inline:auto}
+.hero-portrait figcaption{font-family:var(--mono);font-size:.7rem;line-height:1.5;color:var(--muted);margin:12px auto 0;max-width:420px;padding-left:11px;border-left:2px solid var(--magenta)}
+@media(max-width:860px){.hero-portrait{margin-top:36px}.hero-portrait img{max-width:330px}}
+/* sunset band */
+.sunband{position:relative;margin:0;background:var(--ink)}
+.sunband img{width:100%;height:clamp(240px,38vw,440px);object-fit:cover;object-position:50% 42%;display:block}
+.sunband figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 24px 18px;margin:0;background:linear-gradient(180deg,transparent,rgba(10,9,14,.72));color:#f3eee9}
+.sunband .cap-in{max-width:var(--maxw);margin:0 auto;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sunband .cap-in b{font-family:var(--display);font-size:.95rem;font-weight:600;letter-spacing:0}
+.chip{font-family:var(--mono);font-size:.74rem;letter-spacing:.02em;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:9px 15px}
+.chip b{color:var(--cobalt)}
+
+/* credibility strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+.strip-in{max-width:var(--maxw);margin:0 auto;padding:22px 24px;display:flex;align-items:center;gap:14px 28px;flex-wrap:wrap;justify-content:center}
+.strip .lab{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.strip .name{font-family:var(--display);font-weight:600;font-size:1.02rem;color:#3a3a47;opacity:.9}
+
+/* ============================ ABOUT ============================ */
+.about-grid{display:grid;grid-template-columns:1.55fr .95fr;gap:48px;align-items:start}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:34px}}
+.bio p{font-size:1.16rem;line-height:1.75;margin:0 0 20px;max-width:64ch}
+.bio p:first-of-type::first-letter{font-family:var(--display);font-weight:700;font-size:3.5em;line-height:.72;float:left;padding:8px 12px 0 0;color:var(--cobalt)}
+.bio em{font-style:italic}
+.side{position:sticky;top:96px;display:flex;flex-direction:column;gap:18px}
+.portrait{width:100%;aspect-ratio:4/5;border-radius:var(--r);object-fit:cover;object-position:50% 18%;box-shadow:var(--shadow);display:block;background:var(--cobalt-tint)}
+figure.shot{margin:0}
+figure.shot figcaption{font-family:var(--mono);font-size:.7rem;line-height:1.45;color:var(--muted);margin-top:10px;padding-left:11px;border-left:2px solid var(--magenta)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.card h3{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta);margin:0 0 16px}
+.cur{list-style:none;margin:0 0 18px;padding:0}
+.cur li{padding:11px 0;border-bottom:1px solid var(--line);font-size:.98rem;line-height:1.45}
+.cur li:last-child{border-bottom:0}
+.cur .role{font-family:var(--display);font-weight:600;color:var(--ink)}
+.cur .org{color:var(--muted);font-size:.9rem}
+.card .btn{width:100%;justify-content:center;margin-top:6px}
+
+/* ============================ LISTS (research / writing / press) ============================ */
+.pdfx{display:inline-flex;align-items:center;gap:9px;margin-top:7px;font-family:var(--mono);font-size:.68rem;letter-spacing:.02em}
+.pdfx a{color:var(--magenta);border-bottom:1px solid transparent;padding-bottom:1px}
+.pdfx a:hover{border-bottom-color:var(--magenta);text-decoration:none}
+.pdfx .sep{color:var(--line)}
+.about-pod{margin-top:18px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.about-pod h3{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta);margin:0 0 4px}
+.about-pod .pod-t{font-family:var(--display);font-weight:700;font-size:1.05rem;line-height:1.2;margin:0 0 10px;color:var(--ink)}
+.about-pod iframe{display:block;width:100%;border:0;border-radius:10px}
+.about-pod .pod-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.about-pod .pod-links a{font-family:var(--mono);font-size:.7rem;color:var(--cobalt);border:1px solid var(--line);border-radius:999px;padding:6px 11px}
+.about-pod .pod-links a:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt);text-decoration:none}
+.about-pod .pod-note{font-family:var(--serif);font-style:italic;font-size:.84rem;line-height:1.45;color:var(--muted);margin:11px 0 0}
+.subhead{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:-.01em;margin:40px 0 8px;display:flex;align-items:center;gap:12px}
+.subhead .ct{font-family:var(--mono);font-size:.7rem;color:var(--muted);font-weight:400;background:var(--bone);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.list{list-style:none;margin:0;padding:0}
+.item{padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:baseline}
+.item:hover{background:linear-gradient(90deg,var(--cobalt-tint),transparent 70%)}
+.item .it-title{font-family:var(--serif);font-weight:600;font-size:1.06rem;color:var(--ink);line-height:1.35}
+.item a.it-title:hover{color:var(--cobalt);text-decoration:none}
+.item .it-title .arr{color:var(--cobalt);font-family:var(--mono);font-size:.85em;opacity:0;transition:opacity .15s}
+.item:hover .it-title .arr{opacity:1}
+.item .authors{display:block;color:var(--muted);font-size:.9rem;margin-top:4px;font-family:var(--serif)}
+.item .authors b{color:#33333f}
+.venue{font-family:var(--mono);font-size:.72rem;letter-spacing:.02em;white-space:nowrap;color:var(--magenta);text-transform:uppercase;font-weight:500}
+.venue .yr{color:var(--muted)}
+@media(max-width:620px){.item{grid-template-columns:1fr}.venue{order:-1}}
+
+/* featured cards */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:14px}
+@media(max-width:820px){.feat-grid{grid-template-columns:1fr}}
+.feat{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .15s ease}
+.feat:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(18,18,26,.16);text-decoration:none}
+.feat .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--cobalt);align-self:flex-start;border-radius:999px;padding:5px 11px;margin-bottom:14px}
+.feat .tag.mag{background:var(--magenta)}
+.feat .ft-title{font-family:var(--serif);font-weight:600;font-size:1.12rem;line-height:1.32;color:var(--ink);margin:0 0 14px}
+.feat .ft-title a{color:inherit;text-decoration:none}
+.feat .ft-title a:hover{color:var(--cobalt)}
+.feat .ft-foot{margin-top:auto;font-family:var(--mono);font-size:.74rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--line)}
+.feat .ft-foot .go{color:var(--cobalt)}
+
+.morelink{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-family:var(--mono);font-size:.82rem;color:var(--cobalt);border-bottom:2px solid transparent}
+.morelink:hover{border-bottom-color:var(--cobalt);text-decoration:none}
+
+/* ---- cover wall (writing portfolio) · dusk ---- */
+.cw-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.cw-wall{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cw-wall{grid-template-columns:1fr}}
+.cw-cover{margin:0;border-radius:14px;color:#fff;position:relative;overflow:hidden;cursor:pointer;min-height:250px;display:flex;text-decoration:none;background:var(--c,#2a3170);background:linear-gradient(155deg,var(--c,#2a3170) 0%,color-mix(in srgb,var(--c,#2a3170) 70%,#140f1c) 100%);box-shadow:0 6px 20px rgba(34,26,42,.16);transition:transform .22s,box-shadow .22s;animation:cwRise .5s ease both}
+.cw-cover:hover{transform:translateY(-5px);box-shadow:0 26px 50px rgba(34,26,42,.34);text-decoration:none}
+@keyframes cwRise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.cw-cover{animation:none}}
+.cw-cover::before{content:"";position:absolute;inset:0;z-index:1;mix-blend-mode:overlay;opacity:.12;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cw-cover::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.34) 100%);opacity:.7;transition:opacity .28s}
+.cw-cover:hover::after{opacity:1}
+.cw-inner{position:relative;z-index:2;padding:22px 21px;display:flex;flex-direction:column;justify-content:space-between;width:100%}
+.cw-top{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;opacity:.95}
+.cw-btm{position:relative}
+.cw-rest{transition:opacity .3s ease}
+.cw-rev{max-height:0;opacity:0;overflow:hidden;transition:max-height .34s ease,opacity .26s ease}
+.cw-title{display:block;font-family:var(--display);font-weight:700;line-height:1.1;letter-spacing:-.02em;font-size:1.42rem;margin:0;text-wrap:balance}
+.cw-cat{display:block;font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;opacity:.82;margin-top:13px}
+.cw-dek{display:block;font-family:var(--serif);font-size:.96rem;line-height:1.5;margin:0}
+.cw-read{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;margin-top:13px;display:inline-flex;align-items:center;gap:6px;opacity:.92}
+.cw-read::after{content:"→";transition:transform .2s}
+.cw-cover:hover .cw-rev,.cw-cover:focus-visible .cw-rev{max-height:11em;opacity:1}
+.cw-cover:hover .cw-read::after{transform:translateX(4px)}
+@media(hover:none){.cw-rev{max-height:none;opacity:1}}
+
+/* ============================ LISTEN / WATCH ============================ */
+.media{background:var(--panel);color:#ece9f5}
+.media .eyebrow{color:#8ea2ff}
+.media .eyebrow::before{background:#8ea2ff}
+.media h2.sec{color:#fff}
+.media .sec-intro{color:#b6b3cc}
+.media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:start}
+.media-grid--solo{grid-template-columns:minmax(280px,620px);justify-content:center}/* TikTok-only while the video card is parked in _unused/ — delete on restore */
+@media(max-width:860px){.media-grid{grid-template-columns:1fr}}
+.media-card h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin:0 0 6px;color:#fff}
+.media-card p.cap{color:#b6b3cc;font-size:.96rem;margin:0 0 16px}
+.media-frame{background:#1a1b2e;border:1px solid #2a2b45;border-radius:var(--r);padding:14px;min-height:120px}
+.media-frame iframe{display:block;width:100%;border:0;border-radius:10px}
+.tiktok-embed{margin:0 auto!important}
+.media-links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.media-links a{font-family:var(--mono);font-size:.74rem;color:#c9d2ff;border:1px solid #34355400;background:#23243c;padding:8px 13px;border-radius:999px}
+.media-links a:hover{background:var(--cobalt);color:#fff;text-decoration:none}
+.media-frame--soon{display:flex;align-items:center;justify-content:center;min-height:320px}
+.ph{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;color:#b6b3cc;font-family:var(--mono);font-size:.8rem;line-height:1.5;padding:28px;border:1.5px dashed #34355e;border-radius:10px;width:100%}
+.ph b{color:#fff;font-family:var(--display);font-size:1.05rem}
+.ph-dot{color:var(--magenta);font-size:.65rem;animation:phpulse 2s ease-in-out infinite}
+@keyframes phpulse{0%,100%{opacity:.35}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.ph-dot{animation:none}}
+
+/* ============================ DCLA BAND ============================ */
+.dcla{background:linear-gradient(120deg,var(--cobalt),#3753e6 55%,var(--magenta));color:#fff}
+.dcla-in{display:grid;grid-template-columns:1.5fr 1fr;gap:36px;align-items:center}
+@media(max-width:820px){.dcla-in{grid-template-columns:1fr;gap:24px}}
+.dcla .eyebrow{color:#fff;opacity:.9}.dcla .eyebrow::before{background:#fff}
+.dcla h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 14px}
+.dcla p{color:rgba(255,255,255,.92);font-size:1.08rem;margin:0 0 8px;max-width:52ch}
+.dcla .btn--light{align-self:start}
+.dcla-side{display:flex;flex-direction:column;gap:10px}
+.dcla-side .stat{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:var(--r-sm);padding:14px 16px}
+.dcla-side .stat b{font-family:var(--display);font-size:1.3rem;display:block}
+.dcla-side .stat span{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+
+/* ============================ SPEAKING ============================ */
+.talks{list-style:none;margin:0;padding:0;columns:2;column-gap:40px}
+@media(max-width:760px){.talks{columns:1}}
+.talks li{break-inside:avoid;padding:13px 0;border-bottom:1px solid var(--line)}
+.talks .venue2{font-family:var(--display);font-weight:600;color:var(--ink)}
+.talks .topic{color:var(--muted);font-size:.94rem}
+.talks .when{font-family:var(--mono);font-size:.72rem;color:var(--magenta);text-transform:uppercase}
+
+/* ============================ CV ============================ */
+.cv-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:34px;align-items:start}
+@media(max-width:860px){.cv-wrap{grid-template-columns:1fr}}
+.cv-intro .btnrow{display:flex;flex-direction:column;gap:11px;margin-top:22px;max-width:300px}
+.cv-doc{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:var(--paper)}
+.cv-doc iframe{display:block;width:100%;height:740px;border:0}
+@media(max-width:860px){.cv-doc iframe{height:480px}}
+
+/* ============================ FOOTER / CONNECT ============================ */
+.foot{background:var(--ink);color:#e7e6ef;padding:78px 0 40px}
+.foot .eyebrow{color:#8ea2ff}.foot .eyebrow::before{background:#8ea2ff}
+.foot-grid{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:30px}}
+.foot-portrait{margin:0}
+.foot-portrait img{width:100%;max-width:300px;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block;filter:grayscale(1) contrast(1.04);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.foot-portrait figcaption{font-family:var(--mono);font-size:.7rem;line-height:1.5;color:#9a9aa8;margin-top:12px;max-width:300px;padding-left:11px;border-left:2px solid var(--magenta)}
+@media(max-width:760px){.foot-portrait img{max-width:240px}}
+.foot h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.03em;line-height:1.02;margin:0 0 22px;max-width:18ch}
+.foot h2 a{color:var(--magenta)}
+.socials{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 10px}
+.socials a{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.82rem;color:#e7e6ef;background:#22222e;border:1px solid #32323f;border-radius:999px;padding:11px 17px}
+.socials a:hover{background:var(--cobalt);border-color:var(--cobalt);color:#fff;text-decoration:none}
+.socials svg{width:18px;height:18px;fill:currentColor}
+.foot-meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:24px;border-top:1px solid #2a2a36;font-family:var(--mono);font-size:.74rem;color:#8a8a99}
+.foot-meta a{color:#b9b9c9}
+
+/* back to top */
+.totop{position:fixed;right:22px;bottom:22px;z-index:90;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:var(--shadow)}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{background:var(--cobalt)}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand">Morgan Godvin<span class="dot">.</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#writing">Writing</a>
+      <a href="#listen">Listen</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#press">Press</a>
+      <a href="#cv" class="nav-cta">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="eyebrow">Researcher · Writer · Harm Reductionist</p>
+      <h1 class="reveal">Turning lived experience into <em>evidence</em>.</h1>
+      <p class="lede reveal">From a federal prison cell to the David Geffen School of Medicine. I study the drug supply that nearly killed me — and write about the people the system leaves behind.</p>
+      <div class="hero-cta reveal">
+        <a href="#writing" class="btn btn--solid">Read the writing</a>
+        <a href="#research" class="btn btn--ghost">View research</a>
+        <a href="#cv" class="btn btn--magenta">Live CV ↗</a>
+      </div>
+      <div class="hero-stats reveal">
+        <span class="chip"><b>2×</b> published in JAMA</span>
+        <span class="chip"><b>13+</b> peer-reviewed papers</span>
+        <span class="chip"><b>40+</b> essays &amp; op-eds</span>
+        <span class="chip"><b>200k+</b> followers across platforms</span>
+        <span class="chip">Project Director, <b>Drug Checking Los Angeles</b></span>
+        <span class="chip">Founder, <b>Beats Overdose</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- credibility strip -->
+<div class="strip">
+  <div class="strip-in">
+    <span class="lab">Research, words &amp; coverage in</span>
+    <span class="name">JAMA</span><span class="name">The Washington Post</span>
+    <span class="name">The New York Times</span><span class="name">NPR</span><span class="name">CNN</span>
+    <span class="name">Al Jazeera</span><span class="name">The Marshall Project</span><span class="name">WIRED</span>
+  </div>
+</div>
+
+<!-- ============================ ABOUT ============================ -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2 class="sec">Scientist and survivor, in equal measure.</h2>
+      <div class="bio reveal">
+        <p>Morgan Godvin is a researcher and writer at the UCLA David Geffen School of Medicine, where she is the project director of <strong>Drug Checking Los Angeles</strong> — a community program that chemically analyzes the illicit drug supply and turns what it finds into peer-reviewed science, public-health guidance, and policy. Her research appears in <em>JAMA</em>, the <em>International Journal of Drug Policy</em>, and <em>Drug and Alcohol Dependence</em>; her reporting in <em>The Washington Post</em>, <em>Al Jazeera</em>, <em>The Marshall Project</em>, and <em>Filter</em>.</p>
+        <p>After years of opioid addiction and the overdose death of a close friend, she was prosecuted under a federal drug-induced-homicide statute. After struggling with drug use through her first year in jail, she finally found recovery — not because of her incarceration, but despite it. She was then sent to the nearest women's federal prison, 600 miles away in the Bay Area: FCI Dublin, the institution guards would come to call <em>"the Rape Club,"</em> ultimately shuttered amid a nationwide scandal and the arrest of its warden, chaplain, and other correctional officers. Within weeks of her release she enrolled at Portland State University; three years later she graduated <em>summa cum laude</em>.</p>
+        <p>Since then she has helped write and implement drug policy — from Oregon's Measure 110 to a 2025 study visit with the European Union Drugs Agency in Lisbon — and built a research career measuring the realities of the fentanyl era. She founded <strong>Beats Overdose</strong> to bring naloxone and overdose prevention into nightlife, music, and hip hop scenes. She writes and speaks because the data and the story are two sides of the same coin: drug policy in the US has left a trail of death and destruction in its wake, and it doesn't have to be this way.</p>
+        <p>Drug policy in the United States is in dire shape, with more Americans dying annually than the sum total of Americans who died during the Vietnam War. Incarceration and its collateral consequences produce lifelong, even intergenerational hardships. She survived the grief of losing her mother to overdose as well as her own overdoses. With boundless dedication and a dose of naiveté, she has dedicated herself to the cause of reducing drug-related deaths, and much of what she does is in service to the cause.</p>
+        <p>When she is not doing science, writing, researching, and speaking, she can be found traveling the globe and learning from everyone she meets. She'd like to thank her Centennial Middle and High School Spanish teachers for giving her the first glimpse of a world wider than she once knew.</p>
+      </div>
+    </div>
+    <aside class="side reveal">
+      <figure class="shot">
+        <img class="portrait" src="portrait.jpg" width="860" height="1075" alt="Morgan Godvin speaking on a panel at Harvard University, a 'Morgan Godvin' nameplate on the table in front of her" loading="lazy" />
+        <figcaption>On a panel at Harvard University.</figcaption>
+      </figure>
+      <div class="about-pod">
+        <h3>Listen</h3>
+        <p class="pod-t">Morgan's Story as Told by iHeartRadio</p>
+        <iframe allow="autoplay *; encrypted-media *;" height="175" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/an-addicts-journey/id1666289553?i=1000605298921" title="Morgan's Story — The War on Drugs (iHeartRadio)"></iframe>
+        <div class="pod-links">
+          <a href="https://podcasts.apple.com/us/podcast/an-addicts-journey/id1666289553?i=1000605298921" target="_blank" rel="noopener">Apple Podcasts</a>
+          <a href="https://www.iheart.com/podcast/1119-the-war-on-drugs-107113156/episode/an-addicts-journey-111223268/" target="_blank" rel="noopener">iHeart</a>
+          <a href="https://lavaforgood.com/podcast/s1e10-an-addicts-journey/" target="_blank" rel="noopener">Lava for Good</a>
+        </div>
+        <p class="pod-note">Note: Clearly, they didn't ask me to approve the title, because I wouldn't have approved this. "Addict" is an identity. Drug use is a behavior.</p>
+      </div>
+      <div class="card">
+        <h3>Currently</h3>
+        <ul class="cur">
+          <li><span class="role">Project Director, Drug Checking Los Angeles</span><br><span class="org">UCLA David Geffen School of Medicine</span></li>
+          <li><span class="role">Study Visitor, European Union Drugs Agency</span><br><span class="org">Lisbon, Portugal</span></li>
+          <li><span class="role">Director, Community Advisory Board</span><br><span class="org">NIDA Clinical Trials Network · Western States Node</span></li>
+          <li><span class="role">MPH student</span><br><span class="org">Oregon Health &amp; Science University</span></li>
+          <li><span class="role">Based in Portland, Oregon</span></li>
+        </ul>
+        <a href="#cv" class="btn btn--solid">View live CV</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================ RESEARCH ============================ -->
+<section id="research" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">Opioid &amp; Overdose Research</p>
+    <h2 class="sec">Measuring the fentanyl era.</h2>
+    <p class="sec-intro">Peer-reviewed research on the drug supply, overdose, and the policies meant to address them — including two papers in <em>JAMA</em> and book chapters with Columbia and Rutgers University Press.</p>
+
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <span class="tag">JAMA</span>
+        <p class="ft-title"><a href="https://jamanetwork.com/journals/jama/article-abstract/2790949" target="_blank" rel="noopener">Trends in Drug Overdose Deaths Among US Adolescents, 2010–2021</a></p>
+        <span class="ft-foot"><span>2022 · LA Times</span><span class="pdfx"><a href="papers/2022_JAMA_Trends_in_drug_overdose_deaths_among_US_adolescents.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2022_JAMA_Trends_in_drug_overdose_deaths_among_US_adolescents.pdf" download>Download</a></span></span>
+      </div>
+      <div class="feat reveal">
+        <span class="tag">JAMA</span>
+        <p class="ft-title"><a href="https://jamanetwork.com/journals/jama/fullarticle/2829939" target="_blank" rel="noopener">UV stabilizer BTMPS in the illicit fentanyl supply, 9 US locations</a></p>
+        <span class="ft-foot"><span>2024 · NPR, CNN, WIRED</span><span class="pdfx"><a href="papers/2025_JAMA_BTMPS_illicit_fentanyl_supply.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2025_JAMA_BTMPS_illicit_fentanyl_supply.pdf" download>Download</a></span></span>
+      </div>
+      <div class="feat reveal">
+        <span class="tag mag">First author</span>
+        <p class="ft-title"><a href="https://doi.org/10.1101/2025.10.07.25337514" target="_blank" rel="noopener">Estimating the Daily Morphine-Milligram Equivalent of Illicit Fentanyl Use in Los Angeles</a></p>
+        <span class="ft-foot"><span>Drug &amp; Alcohol Dependence, 2025</span><span class="pdfx"><a href="papers/2026_medRxiv_Daily_MME_illicit_fentanyl_v3.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2026_medRxiv_Daily_MME_illicit_fentanyl_v3.pdf" download>Download</a></span></span>
+      </div>
+    </div>
+
+    <div class="subhead">Peer-reviewed papers <span class="ct">selected</span></div>
+    <ul class="list">
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1016/j.drugpo.2025.104977" target="_blank" rel="noopener">High variation in purity of consumer-level illicit fentanyl samples in Los Angeles, Sept 2023–April 2025 <span class="arr">↗</span></a><span class="authors">Shover C, Koncsol A, <b>Godvin M</b>, et al.</span><span class="pdfx"><a href="papers/2025_IJDP_High_variation_fentanyl_purity_LA.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2025_IJDP_High_variation_fentanyl_purity_LA.pdf" download>Download</a></span></span><span class="venue">Int J Drug Policy <span class="yr">· 2025</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1016/j.dadr.2025.100364" target="_blank" rel="noopener">Xylazine prevalence and concentration in the Los Angeles fentanyl market, 2023–2025 <span class="arr">↗</span></a><span class="authors">Friedman J, Molina C, Koncsol A, Romero R, <b>Godvin M</b>, et al.</span><span class="pdfx"><a href="papers/2025_DADR_Xylazine_prevalence_LA_fentanyl_market.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2025_DADR_Xylazine_prevalence_LA_fentanyl_market.pdf" download>Download</a></span></span><span class="venue">Drug Alcohol Depend Rep <span class="yr">· 2025</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1016/j.drugpo.2025.104789" target="_blank" rel="noopener">The Police Opioid Seizure Temporal Risk (POSTeR) model of increased exposure to fatal overdose <span class="arr">↗</span></a><span class="authors">del Pozo B, Green T, <b>Godvin M</b>, Ray B.</span></span><span class="venue">Int J Drug Policy <span class="yr">· 2025</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1016/j.drugpo.2025.104745" target="_blank" rel="noopener">Policing during a period of drug decriminalization: experiences of people who use drugs in Oregon <span class="arr">↗</span></a><span class="authors">Good D, Shin S, Kappensner K, Leichtling G, Lambdin B, <b>Godvin M</b>, Wenger L, Kral A.</span></span><span class="venue">Int J Drug Policy <span class="yr">· 2025</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1186/s12889-025-24460-y" target="_blank" rel="noopener">Motivational interviewing to increase drug checking and reduce overdose: a hybrid type-1 trial protocol <span class="arr">↗</span></a><span class="authors">Bailey K, Strathdee S, Bazzi A, Stamos T, <b>Godvin M</b>, et al.</span><span class="pdfx"><a href="papers/2025_BMC_Public_Health_MI_CHANCE_protocol.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2025_BMC_Public_Health_MI_CHANCE_protocol.pdf" download>Download</a></span></span><span class="venue">BMC Public Health <span class="yr">· 2025</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1186/s12889-025-21925-y" target="_blank" rel="noopener">Housing assistance among people who are unstably housed and use drugs in Oregon <span class="arr">↗</span></a><span class="authors">Chung E, Wenger L, Good D, <b>Godvin M</b>, Lambdin B, Kral A.</span><span class="pdfx"><a href="papers/2025_BMC_Public_Health_Housing_assistance_Oregon.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2025_BMC_Public_Health_Housing_assistance_Oregon.pdf" download>Download</a></span></span><span class="venue">BMC Public Health <span class="yr">· 2025</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://www.medrxiv.org/content/10.1101/2025.06.28.25330471v1" target="_blank" rel="noopener">Assessing the real-world performance of xylazine test strips for community drug checking in LA <span class="arr">↗</span></a><span class="authors">Molina C, Friedman J, Koncsol A, Romero R, <b>Godvin M</b>, Shover C.</span><span class="pdfx"><a href="papers/2026_HRJ_Xylazine_test_strips_real_world_performance.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2026_HRJ_Xylazine_test_strips_real_world_performance.pdf" download>Download</a></span></span><span class="venue">Harm Reduct J <span class="yr">· accepted</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1016/j.drugalcdep.2024.112449" target="_blank" rel="noopener">Criminal legal system engagement among people who use drugs in Oregon after decriminalization <span class="arr">↗</span></a><span class="authors">Smiley-McDonald H, Chung E, Wenger L, <b>Godvin M</b>, et al.</span></span><span class="venue">Drug Alcohol Depend <span class="yr">· 2024</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1016/j.drugalcdep.2023.110819" target="_blank" rel="noopener">Fentanyl, heroin &amp; methamphetamine-based counterfeit pills sold at tourist-oriented pharmacies in Mexico <span class="arr">↗</span></a><span class="authors">Friedman JR, <b>Godvin M</b>, Molina C, et al.</span><span class="pdfx"><a href="papers/2023_DAD_Counterfeit_pills_Mexico.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2023_DAD_Counterfeit_pills_Mexico.pdf" download>Download</a></span></span><span class="venue">Drug Alcohol Depend <span class="yr">· 2023</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1016/j.drugpo.2022.103678" target="_blank" rel="noopener">The introduction of fentanyl on the US–Mexico border: ethnography triangulated with drug-checking data from Tijuana <span class="arr">↗</span></a><span class="authors">Friedman J, Bourgois P, <b>Godvin M</b>, et al.</span><span class="pdfx"><a href="papers/2022_IJDP_Introduction_of_fentanyl_US_Mexico_border.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2022_IJDP_Introduction_of_fentanyl_US_Mexico_border.pdf" download>Download</a></span></span><span class="venue">Int J Drug Policy <span class="yr">· 2022</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://www.medrxiv.org/content/10.1101/2025.05.09.25327334" target="_blank" rel="noopener">What dose of methamphetamine do regular consumers use daily? Estimating milligrams of oral amphetamine equivalent <span class="arr">↗</span></a><span class="authors">Friedman J, Koncsol A, Molina C, Romero R, <b>Godvin M</b>, et al.</span><span class="pdfx"><a href="papers/2025_medRxiv_Methamphetamine_daily_dose_MOAE_v2.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2025_medRxiv_Methamphetamine_daily_dose_MOAE_v2.pdf" download>Download</a></span></span><span class="venue">medRxiv <span class="yr">· preprint</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://www.medrxiv.org/content/10.1101/2025.03.18.25323868" target="_blank" rel="noopener">Purity of consumer-level methamphetamine samples and methamphetamine-adulteration of other drugs: Los Angeles <span class="arr">↗</span></a><span class="authors">Koncsol A, Molina C, Romero R, <b>Godvin M</b>, et al.</span><span class="pdfx"><a href="papers/2026_medRxiv_Methamphetamine_purity_adulteration_v3.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2026_medRxiv_Methamphetamine_purity_adulteration_v3.pdf" download>Download</a></span></span><span class="venue">medRxiv <span class="yr">· preprint</span></span></li>
+    </ul>
+
+    <div class="subhead">Reviews &amp; book chapters</div>
+    <ul class="list">
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.7312/eise21216-012" target="_blank" rel="noopener">Punishment Over Prevention: U.S. Drug Policy <span class="arr">↗</span></a><span class="authors">In <em>Excessive Punishment</em> (ed. L.-B. Eisen). <b>Godvin M.</b></span></span><span class="venue">Columbia Univ. Press <span class="yr">· 2024</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://www.rutgersuniversitypress.org/ecologies-of-justice/9781978840324" target="_blank" rel="noopener">The Ecology of Prisons and the Effect on Mental Health <span class="arr">↗</span></a><span class="authors">In <em>Ecologies of Justice</em>. <b>Godvin M.</b></span></span><span class="venue">Rutgers Univ. Press <span class="yr">· 2026</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://doi.org/10.1097/YCO.0000000000000876" target="_blank" rel="noopener">Polysubstance use and lived experience: new insights into what is needed <span class="arr">↗</span></a><span class="authors">Shover CL, Spoliansky JG, <b>Godvin M.</b></span></span><span class="venue">Curr Opin Psychiatry <span class="yr">· 2023</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://ssrn.com/abstract=4401140" target="_blank" rel="noopener">Drug-Induced Homicide Laws and False Beliefs About Drug Distributors <span class="arr">↗</span></a><span class="authors">El-Sabawi T, Carroll J, <b>Godvin M.</b> <em>American Criminal Law Review</em>, Vol. 60.</span><span class="pdfx"><a href="papers/2023_ACLR_Drug_induced_homicide_laws_false_beliefs.pdf" target="_blank" rel="noopener">View PDF</a><span class="sep">·</span><a href="papers/2023_ACLR_Drug_induced_homicide_laws_false_beliefs.pdf" download>Download</a></span></span><span class="venue">SSRN <span class="yr">· 2023</span></span></li>
+    </ul>
+
+    <a class="morelink" href="https://scholar.google.com/citations?user=QLOd9n0AAAAJ&hl=en" target="_blank" rel="noopener">Full publication list on Google Scholar →</a>
+    &nbsp;&nbsp;
+    <a class="morelink" href="#cv">Or see the complete CV ↓</a>
+  </div>
+</section>
+
+<!-- ============================ WRITING ============================ -->
+<section id="writing">
+  <div class="wrap">
+    <p class="eyebrow">Writing</p>
+    <h2 class="sec">The personal and the political, where they meet.</h2>
+    <p class="sec-intro">More than forty essays and op-eds in <em>The Washington Post</em>, <em>The Marshall Project</em>, <em>Al Jazeera</em>, <em>Vice</em>, <em>JSTOR Daily</em>, <em>Filter</em>, and more.</p>
+
+    <div class="cw-wall reveal">
+      <a class="cw-cover cw-tall" style="--c:#523a73;animation-delay:0ms" href="https://www.washingtonpost.com/outlook/my-friend-and-i-both-took-heroin-he-overdosed-why-was-i-charged-for-his-death/2019/11/26/33ca4826-d965-11e9-bfb1-849887369476_story.html" target="_blank" rel="noopener" aria-label="The Washington Post, 2019: My friend and I both took heroin. He overdosed. Why was I charged with his death?">
+        <span class="cw-inner"><span class="cw-top"><span>Washington Post</span><span>2019</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">My friend and I both took heroin. He overdosed. Why was I charged with his death?</span><span class="cw-cat">Op-ed</span></span><span class="cw-rev"><span class="cw-dek">The federal case that turned private grief into a confession — and a five-year sentence.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-mid" style="--c:#7a2740;animation-delay:40ms" href="https://www.themarshallproject.org/2019/04/11/money-changed-everything-for-me-in-prison" target="_blank" rel="noopener" aria-label="The Marshall Project, 2019: Money changed everything for me in prison">
+        <span class="cw-inner"><span class="cw-top"><span>Marshall Project</span><span>2019</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">Money changed everything for me in prison</span><span class="cw-cat">Essay</span></span><span class="cw-rev"><span class="cw-dek">Why my reentry indicts the system rather than vindicating it.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-mid" style="--c:#1f5a6b;animation-delay:80ms" href="https://www.themarshallproject.org/2020/09/03/i-thought-jail-would-help-me-get-clean-i-was-dead-wrong" target="_blank" rel="noopener" aria-label="The Marshall Project, 2020: I thought jail would help me get clean. I was dead wrong.">
+        <span class="cw-inner"><span class="cw-top"><span>Marshall Project</span><span>2020</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">I thought jail would help me get clean. I was dead wrong.</span><span class="cw-cat">Essay</span></span><span class="cw-rev"><span class="cw-dek">Drug court promised treatment and delivered punishment by another name.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-tall" style="--c:#6f3d63;animation-delay:120ms" href="https://morgangodvin.medium.com/last-month-i-almost-killed-myself-5331c8449507" target="_blank" rel="noopener" aria-label="Medium, 2022: Last Month, I Almost Killed Myself">
+        <span class="cw-inner"><span class="cw-top"><span>Medium</span><span>2022</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">Last Month, I Almost Killed Myself</span><span class="cw-cat">Personal essay</span></span><span class="cw-rev"><span class="cw-dek">On the danger of building a career on recovery when you are not, in fact, okay.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-short" style="--c:#1f5040;animation-delay:160ms" href="https://www.aljazeera.com/features/2021/5/31/what-does-patriotism-mean-to-us-military-veterans" target="_blank" rel="noopener" aria-label="Al Jazeera English, 2021: What does patriotism mean to US military veterans?">
+        <span class="cw-inner"><span class="cw-top"><span>Al Jazeera</span><span>2021</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">What does patriotism mean to US military veterans?</span><span class="cw-cat">Feature</span></span><span class="cw-rev"><span class="cw-dek">Veterans on service, sacrifice, and the country they came home to.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-mid" style="--c:#2a3170;animation-delay:200ms" href="https://www.latimes.com/opinion/story/2021-01-05/overdose-epidemic-fentanyl-treatment-buprenorphine-methadone" target="_blank" rel="noopener" aria-label="Los Angeles Times, 2021: An overdose epidemic is raging alongside the coronavirus pandemic">
+        <span class="cw-inner"><span class="cw-top"><span>LA Times</span><span>2021</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">An overdose epidemic is raging alongside the pandemic</span><span class="cw-cat">Op-ed</span></span><span class="cw-rev"><span class="cw-dek">As COVID closed the world, a second epidemic accelerated — and treatment got harder to reach.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-short" style="--c:#7a2740;animation-delay:240ms" href="https://www.vice.com/en_us/article/d3xdxa/what-i-learned-from-mexican-women-in-prison" target="_blank" rel="noopener" aria-label="Vice, 2020: When almost all your fellow inmates speak another language">
+        <span class="cw-inner"><span class="cw-top"><span>Vice</span><span>2020</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">When almost all your fellow inmates speak another language</span><span class="cw-cat">Essay</span></span><span class="cw-rev"><span class="cw-dek">What the Mexican women I served time with taught me about dignity inside.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-mid" style="--c:#523a73;animation-delay:280ms" href="https://medium.com/@MorganGodvin/lessons-from-incarceration-enduring-isolation-in-times-of-uncertainty-82fe6ec3403d" target="_blank" rel="noopener" aria-label="Human Parts, 2020: Lessons from incarceration: enduring isolation in times of uncertainty">
+        <span class="cw-inner"><span class="cw-top"><span>Human Parts</span><span>2020</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">Lessons from incarceration: enduring isolation</span><span class="cw-cat">Essay</span></span><span class="cw-rev"><span class="cw-dek">Four years inside taught me how to survive a lockdown. Then the country went into one.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-short" style="--c:#1f5a6b;animation-delay:320ms" href="https://oregoncapitalchronicle.com/2023/12/15/recriminalizing-drugs-would-be-a-bad-choice-for-oregon/" target="_blank" rel="noopener" aria-label="Oregon Capital Chronicle, 2023: Recriminalizing drugs would be a bad choice for Oregon">
+        <span class="cw-inner"><span class="cw-top"><span>Oregon Capital Chronicle</span><span>2023</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">Recriminalizing drugs would be a bad choice for Oregon</span><span class="cw-cat">Op-ed</span></span><span class="cw-rev"><span class="cw-dek">Rolling back Measure 110 won't fix the crisis it's being blamed for.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-mid" style="--c:#1f5040;animation-delay:360ms" href="https://truthout.org/articles/dont-blame-drug-decriminalization-for-what-the-housing-crisis-has-caused/" target="_blank" rel="noopener" aria-label="Truthout, 2023: Don't blame drug decriminalization for what the housing crisis has caused">
+        <span class="cw-inner"><span class="cw-top"><span>Truthout</span><span>2023</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">Don't blame decriminalization for the housing crisis</span><span class="cw-cat">Op-ed</span></span><span class="cw-rev"><span class="cw-dek">The suffering on the streets is a housing failure, not a decriminalization one.</span><span class="cw-read">Read the piece</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-short" style="--c:#6f3d63;animation-delay:400ms" href="https://doi.org/10.7312/eise21216-012" target="_blank" rel="noopener" aria-label="Columbia University Press, 2024: Punishment Over Prevention: U.S. Drug Policy">
+        <span class="cw-inner"><span class="cw-top"><span>Columbia Univ. Press</span><span>2024</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">Punishment Over Prevention: U.S. Drug Policy</span><span class="cw-cat">Book chapter</span></span><span class="cw-rev"><span class="cw-dek">In <em>Excessive Punishment</em>, ed. Lauren-Brooke Eisen.</span><span class="cw-read">View the chapter</span></span></span></span>
+      </a>
+      <a class="cw-cover cw-mid" style="--c:#2a3170;animation-delay:440ms" href="https://www.rutgersuniversitypress.org/ecologies-of-justice/9781978840324" target="_blank" rel="noopener" aria-label="Rutgers University Press, 2026: The Ecology of Prisons and the Effect on Mental Health">
+        <span class="cw-inner"><span class="cw-top"><span>Rutgers Univ. Press</span><span>2026</span></span><span class="cw-btm"><span class="cw-rest"><span class="cw-title">The Ecology of Prisons and the Effect on Mental Health</span><span class="cw-cat">Book chapter</span></span><span class="cw-rev"><span class="cw-dek">In <em>Ecologies of Justice: Making and Unmaking Prison Worlds.</em></span><span class="cw-read">View the chapter</span></span></span></span>
+      </a>
+    </div>
+
+    <!-- selected essays are shown above as the cover wall; full archive via the portfolio link -->
+
+    <a class="morelink" href="https://www.morgangodvin.com/portfolio" target="_blank" rel="noopener">Browse the full portfolio — 40+ pieces →</a>
+  </div>
+</section>
+
+<!-- ============================ LISTEN / WATCH ============================ -->
+<section id="listen" class="media">
+  <div class="wrap">
+    <p class="eyebrow">Listen &amp; Watch</p>
+    <h2 class="sec">The story, in her own voice.</h2>
+    <p class="sec-intro">Dispatches from the front line of harm reduction — and life after prison. (The full-length audio documentary lives up in <a href="#about" style="color:#8ea2ff">About</a>.)</p>
+    <div class="media-grid media-grid--solo">
+      <!-- methadone-at-UN video card parked in _unused/methadone-video-card.html (12 Jun 2026) — restore when the Reel posts -->
+      <div class="media-card reveal">
+        <h3>@morgangodvin on TikTok</h3>
+        <p class="cap">Harm reduction, drug policy, and life after prison — short, unflinching, and widely shared.</p>
+        <div class="media-frame">
+          <iframe src="https://www.tiktok.com/embed/v2/7381670745589468462" height="760" allow="encrypted-media; fullscreen" title="Morgan Godvin on TikTok" loading="lazy"></iframe>
+        </div>
+        <div class="media-links">
+          <a href="https://www.tiktok.com/@morgangodvin" target="_blank" rel="noopener">Open TikTok</a>
+          <a href="https://www.youtube.com/@morgangodvinPDX" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.instagram.com/morgangodvin/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SUNSET BAND ============================ -->
+<figure class="sunband">
+  <img src="sunset-portland.jpg" width="2000" height="833" alt="Sunset over the hills and river of Portland, Oregon, with people sitting on the grass" loading="lazy" />
+  <figcaption><span class="cap-in"><b>Portland, Oregon.</b> Home — also known as the District of Oregon: the court that sentenced me to 60 months in federal prison and shipped me to FCI Dublin.</span></figcaption>
+</figure>
+
+<!-- ============================ DCLA BAND ============================ -->
+<section class="dcla">
+  <div class="wrap dcla-in">
+    <div class="reveal">
+      <p class="eyebrow">Where I Work</p>
+      <h2>Drug Checking Los Angeles</h2>
+      <p>We're a UCLA-based community program that chemically analyzes the illicit drug supply, via FTIR and lab testing, providing a life-saving direct service while generating insights into the shifting drug supply.</p>
+      <p style="margin-bottom:22px">Our findings have surfaced in <em>JAMA</em>, NPR, All Things Considered, and CNN — including the first U.S. reports of the industrial chemical BTMPS in fentanyl.</p>
+      <a class="btn btn--light" href="https://drugcheckinglosangeles.com" target="_blank" rel="noopener"><img src="dcla-mark.png" alt="" width="22" height="22" style="width:22px;height:22px;object-fit:contain;margin-right:2px" />visit drugcheckinglosangeles.com ↗</a>
+    </div>
+    <div class="dcla-side reveal">
+      <div class="stat" style="text-transform:none"><b style="text-transform:none">community-based drug checking and drug supply research</b><span style="text-transform:none">david geffen school of medicine at ucla</span></div>
+      <a class="stat" href="https://www.instagram.com/drugcheckingla/" target="_blank" rel="noopener" style="display:block;color:inherit;text-decoration:none"><b>@drugcheckingla</b><span>Follow on Instagram ↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BEATS OVERDOSE ============================ -->
+<section id="beats" style="background:var(--bone)">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <p class="eyebrow">Before this</p>
+      <h2 class="sec">Founder &amp; Executive Director, Beats Overdose</h2>
+      <p class="sec-intro" style="max-width:62ch;margin-bottom:22px"><strong>2021–2025.</strong> In partnership with Rhymesayers Entertainment, we provided overdose-prevention services on tour with Atmosphere all across the country — at a time when venue-based harm reduction was rare. We pushed through countless barriers to partner with dozens of harm-reduction organizations and bring our services to cities all over the country. Many of those relationships carried on, ushering in a new era of acceptability for overdose-prevention services at concerts and nightlife events. Beats Overdose still exists, but is lying low while I build out my research skills.</p>
+      <div class="hero-stats">
+        <span class="chip"><b>35</b> states</span>
+        <span class="chip"><b>$2M</b> in supplies distributed</span>
+        <span class="chip"><b>250,000</b> people reached</span>
+      </div>
+    </div>
+    <div class="reveal" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px">
+      <img src="beats-overdose-logo.png" alt="Beats Overdose logo" style="max-width:320px;width:100%" />
+      <a class="btn btn--ghost" href="https://beatsoverdose.com" target="_blank" rel="noopener">beatsoverdose.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SPEAKING ============================ -->
+<section id="speaking" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">Speaking</p>
+    <h2 class="sec">From the lecture hall to the state capitol.</h2>
+    <p class="sec-intro">Morgan speaks to universities, agencies, clinicians, and movement spaces about drugs, prisons, harm reduction, and the people behind the data.</p>
+    <ul class="talks reveal">
+      <li><span class="venue2">Yale University</span> — SEICHE Center for Health &amp; Justice <span class="when">2023</span><div class="topic">Addiction &amp; the criminal-legal system</div></li>
+      <li><span class="venue2">National Institutes of Health</span> — Criminal-Legal Subgroup <span class="when">2024</span><div class="topic">Decriminalization &amp; recriminalization in Oregon</div></li>
+      <li><span class="venue2">National Academy of Medicine</span> <span class="when">2022</span><div class="topic">Invited lecture</div></li>
+      <li><span class="venue2">European Union Drugs Agency</span> — Lisbon <span class="when">2025</span><div class="topic">Four talks at the Drug-Related Deaths meeting</div></li>
+      <li><span class="venue2">VinUniversity</span> — Hanoi, Vietnam <span class="when">2025</span><div class="topic">Emerging science on drug use &amp; addiction</div></li>
+      <li><span class="venue2">Oregon Legislature</span> — Joint Committee on Addiction &amp; Public Safety <span class="when">2023</span><div class="topic">The state of affairs on substance use</div></li>
+      <li><span class="venue2">Drug Policy Alliance</span> — Reform Conference <span class="when">2022</span><div class="topic">When facts fail · community-driven research</div></li>
+      <li><span class="venue2">National Harm Reduction Coalition</span> — San Juan <span class="when">2022</span><div class="topic">People with lived &amp; living experience as researchers</div></li>
+      <li><span class="venue2">Arizona State University</span> — Drugs &amp; Public Safety Symposium <span class="when">2023</span></li>
+      <li><span class="venue2">College on Problems of Drug Dependence</span> — New Orleans <span class="when">2025</span></li>
+      <li><span class="venue2">New York Society of Addiction Medicine</span> — keynote <span class="when">2021</span></li>
+      <li><span class="venue2">Lisbon Addictions</span> <span class="when">2024</span><div class="topic">Law-enforcement experiences after Measure 110</div></li>
+    </ul>
+    <a class="morelink" href="#connect">Invite Morgan to speak →</a>
+  </div>
+</section>
+
+<!-- ============================ PRESS ============================ -->
+<section id="press">
+  <div class="wrap">
+    <p class="eyebrow">Press &amp; Media</p>
+    <h2 class="sec">Selected coverage &amp; appearances.</h2>
+    <p class="sec-intro">Morgan's research and story have featured across national press, broadcast, and radio.</p>
+    <ul class="list">
+      <li class="item"><span><a class="it-title" href="https://www.nytimes.com/2022/01/26/opinion/oregon-drug-decriminalization-addiction.html" target="_blank" rel="noopener">Treating addiction as a crime doesn't work. What Oregon is doing just might. <span class="arr">↗</span></a><span class="authors">by Maia Szalavitz — featuring Morgan's story</span></span><span class="venue">The New York Times <span class="yr">· 2022</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://www.cnn.com/2025/02/12/health/btmps-fentanyl-industrial-chemical/index.html" target="_blank" rel="noopener">"One of the larger mysteries I've ever seen": industrial chemical found in illicit fentanyl <span class="arr">↗</span></a><span class="authors">On the DCLA / UCLA BTMPS findings</span></span><span class="venue">CNN <span class="yr">· 2025</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://www.npr.org/2024/10/01/nx-s1-5132067/the-street-supply-of-fentanyl-is-dropping-this-shift-could-save-thousands" target="_blank" rel="noopener">The street supply of fentanyl is dropping. This shift could save thousands. <span class="arr">↗</span></a></span><span class="venue">NPR <span class="yr">· 2024</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://www.wired.com/story/narcan-festivals-summer-prevent-overdose/" target="_blank" rel="noopener">The must-have gear for going out this summer? Narcan! <span class="arr">↗</span></a></span><span class="venue">WIRED</span></li>
+      <li class="item"><span><a class="it-title" href="https://www.esquire.com/news-politics/a44651237/oregon-drug-decriminalization-measure-110/" target="_blank" rel="noopener">The land beyond the drug war <span class="arr">↗</span></a></span><span class="venue">Esquire</span></li>
+      <li class="item"><span><a class="it-title" href="https://www.latimes.com/california/story/2022-04-12/drug-overdose-deaths" target="_blank" rel="noopener">Deadly overdoses have spiked among teens, even as drug use dropped <span class="arr">↗</span></a></span><span class="venue">Los Angeles Times <span class="yr">· 2022</span></span></li>
+      <li class="item"><span><a class="it-title" href="https://www.nbcnews.com/news/us-news/prison-tiktok-influencers-rcna23090" target="_blank" rel="noopener">Out of prison, TikTok influencers are reshaping how we think about life behind bars <span class="arr">↗</span></a></span><span class="venue">NBC News</span></li>
+      <li class="item"><span><a class="it-title" href="https://www.marketplace.org/2019/05/23/money-makes-all-the-difference-in-prison/" target="_blank" rel="noopener">The unfair advantages that money provided me in prison <span class="arr">↗</span></a></span><span class="venue">NPR Marketplace <span class="yr">· 2019</span></span></li>
+    </ul>
+    <a class="morelink" href="https://www.morgangodvin.com/media-appearances" target="_blank" rel="noopener">All media appearances →</a>
+  </div>
+</section>
+
+<!-- ============================ CV ============================ -->
+<section id="cv" style="background:var(--paper);border-top:1px solid var(--line)">
+  <div class="wrap cv-wrap">
+    <div class="cv-intro reveal">
+      <p class="eyebrow">Curriculum Vitae</p>
+      <h2 class="sec">The full record.</h2>
+      <p class="sec-intro" style="margin-bottom:6px">Education, positions, the complete publication list, honors, and every talk — updated May 2026. Read it here or take a copy.</p>
+      <div class="btnrow">
+        <a class="btn btn--solid" href="morgan-godvin-cv.pdf" download>Download CV (PDF)</a>
+        <a class="btn btn--ghost" href="morgan-godvin-cv.pdf" target="_blank" rel="noopener">Open in new tab ↗</a>
+      </div>
+    </div>
+    <div class="cv-doc reveal">
+      <iframe src="morgan-godvin-cv.pdf#view=FitH&toolbar=1" title="Morgan Godvin — Curriculum Vitae" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER / CONNECT ============================ -->
+<footer class="foot" id="connect">
+  <div class="wrap">
+    <div class="foot-grid">
+      <figure class="foot-portrait">
+        <img src="beats-overdose.jpg" width="720" height="899" alt="Morgan Godvin wearing a Beats Overdose T-shirt" loading="lazy" />
+        <figcaption>In my Beats Overdose shirt — the nightlife overdose-prevention project I founded.</figcaption>
+      </figure>
+      <div class="foot-copy">
+    <p class="eyebrow">Connect</p>
+    <h2>Let's talk drugs, policy, prisons, or a project. <a href="https://www.linkedin.com/in/morgan-godvin-45a141192/" target="_blank" rel="noopener">Contact me ↗</a></h2>
+    <div class="socials">
+      <a href="https://www.tiktok.com/@morgangodvin" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8a4.3 4.3 0 0 1-1-2.8h-3v12.1a2.5 2.5 0 1 1-2.5-2.5c.26 0 .5.04.74.1V9.6a5.6 5.6 0 0 0-.74-.05A5.55 5.55 0 1 0 15.6 15V8.9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.3-1.5z"/></svg>TikTok</a>
+      <a href="https://www.instagram.com/morgangodvin/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.18A6.62 6.62 0 1 0 18.62 12 6.62 6.62 0 0 0 12 5.38zm0 10.92A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.88-11.2a1.55 1.55 0 1 1-1.55-1.55 1.55 1.55 0 0 1 1.55 1.55z"/></svg>Instagram</a>
+      <a href="https://www.youtube.com/@morgangodvinPDX" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.5 31 31 0 0 0-.5-4.5zM9.8 15.3V8.7l5.7 3.3z"/></svg>YouTube</a>
+      <a href="https://www.linkedin.com/in/morgan-godvin-45a141192/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57z"/></svg>LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span>© <span id="yr">2026</span> Morgan Godvin · Portland, Oregon</span>
+      <span>UCLA David Geffen School of Medicine</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  // mobile nav
+  var toggle=document.querySelector('.nav-toggle'), links=document.getElementById('navlinks');
+  toggle&&toggle.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open);
+  });
+  links&&links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');toggle.setAttribute('aria-expanded',false);});});
+
+  // reveal on scroll
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // scrollspy
+  var navMap={}; document.querySelectorAll('.nav-links a').forEach(function(a){var id=a.getAttribute('href');if(id&&id.charAt(0)==='#'){navMap[id.slice(1)]=a;}});
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ Object.values(navMap).forEach(function(a){a.classList.remove('active');}); var a=navMap[e.target.id]; a&&a.classList.add('active'); } });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  ['about','research','writing','listen','speaking','press','cv'].forEach(function(id){var el=document.getElementById(id);el&&spy.observe(el);});
+
+  // back to top
+  var tt=document.getElementById('totop');
+  window.addEventListener('scroll',function(){ tt.classList.toggle('show',window.scrollY>700); },{passive:true});
+  tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // year
+  var y=document.getElementById('yr'); if(y) y.textContent=(new Date().getFullYear());
+})();
+</script>
+</body>
+</html>
