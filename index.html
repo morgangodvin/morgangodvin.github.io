@@ -320,6 +320,18 @@ figure.shot figcaption{font-family:var(--mono);font-size:.7rem;line-height:1.45;
 .foot-meta{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:48px;padding-top:24px;border-top:1px solid #2a2a36;font-family:var(--mono);font-size:.74rem;color:#8a8a99}
 .foot-meta a{color:#b9b9c9}
 
+/* speaking & consulting band */
+.scmini{padding:64px 0;border-bottom:1px solid var(--line)}
+.scmini .eyebrow{color:var(--magenta)}
+.scmini-grid{display:grid;grid-template-columns:repeat(3,1fr);margin:20px 0 26px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:var(--paper)}
+.scmini-col{padding:22px 24px;border-left:1px solid var(--line)}
+.scmini-col:first-child{border-left:0}
+.scmini-k{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta);display:block;margin-bottom:10px;font-weight:600}
+.scmini-col p{font-family:var(--serif);font-size:1.02rem;line-height:1.5;color:#33333f;margin:0}
+.scmini-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.scmini-venues{font-family:var(--mono);font-size:.74rem;letter-spacing:.02em;color:var(--muted)}
+@media(max-width:760px){.scmini-grid{grid-template-columns:1fr}.scmini-col{border-left:0;border-top:1px solid var(--line)}.scmini-col:first-child{border-top:0}}
+
 /* back to top */
 .totop{position:fixed;right:22px;bottom:22px;z-index:90;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:var(--shadow)}
 .totop.show{opacity:1;pointer-events:auto}
@@ -336,10 +348,10 @@ figure.shot figcaption{font-family:var(--mono);font-size:.7rem;line-height:1.45;
     <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
       <a href="#about">About</a>
+      <a href="#hire">Speaking</a>
+      <a href="#hire">Consulting</a>
       <a href="#research">Research</a>
       <a href="#writing">Writing</a>
-      <a href="#listen">Listen</a>
-      <a href="#speaking">Speaking</a>
       <a href="#press">Press</a>
       <a href="#cv" class="nav-cta">CV</a>
     </nav>
@@ -361,13 +373,13 @@ figure.shot figcaption{font-family:var(--mono);font-size:.7rem;line-height:1.45;
 <section class="hero">
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="eyebrow">Researcher · Writer · Harm Reductionist</p>
+      <p class="eyebrow">Researcher · Writer · Speaker · Harm Reductionist</p>
       <h1 class="reveal">Turning lived experience into <em>evidence</em>.</h1>
       <p class="lede reveal">From a federal prison cell to the David Geffen School of Medicine. I study the drug supply that nearly killed me — and write about the people the system leaves behind.</p>
       <div class="hero-cta reveal">
+        <a href="#hire" class="btn btn--magenta">Speaking &amp; consulting →</a>
         <a href="#writing" class="btn btn--solid">Read the writing</a>
-        <a href="#research" class="btn btn--ghost">View research</a>
-        <a href="#cv" class="btn btn--magenta">Live CV ↗</a>
+        <a href="#cv" class="btn btn--ghost">Live CV ↓</a>
       </div>
       <div class="hero-stats reveal">
         <span class="chip"><b>2×</b> published in JAMA</span>
@@ -390,6 +402,32 @@ figure.shot figcaption{font-family:var(--mono);font-size:.7rem;line-height:1.45;
     <span class="name">Al Jazeera</span><span class="name">The Marshall Project</span><span class="name">WIRED</span>
   </div>
 </div>
+
+<!-- ============================ SPEAKING & CONSULTING (band) ============================ -->
+<section class="scmini" id="hire">
+  <div class="wrap">
+    <p class="eyebrow">Speaking &amp; Consulting</p>
+    <h2 class="sec">I speak and consult on drugs, policy, and prisons.</h2>
+    <div class="scmini-grid reveal">
+      <div class="scmini-col">
+        <span class="scmini-k">Consulting &amp; Training</span>
+        <p>Drug-checking program design, community-engaged research, science communication, and AI for researchers.</p>
+      </div>
+      <div class="scmini-col">
+        <span class="scmini-k">Expert Keynotes</span>
+        <p>The synthetic opioid supply, medication treatment (MOUD), drug policy, and harm reduction.</p>
+      </div>
+      <div class="scmini-col">
+        <span class="scmini-k">Story-Driven Talks</span>
+        <p>Incarceration, recovery, and the road from a prison cell to research.</p>
+      </div>
+    </div>
+    <div class="scmini-cta">
+      <a class="btn btn--solid" href="speaking.html">See all topics &amp; book →</a>
+      <span class="scmini-venues">Spoken at Yale · NIH · the National Academy of Medicine · the EU Drugs Agency</span>
+    </div>
+  </div>
+</section>
 
 <!-- ============================ ABOUT ============================ -->
 <section id="about">
@@ -618,28 +656,8 @@ figure.shot figcaption{font-family:var(--mono);font-size:.7rem;line-height:1.45;
 </section>
 
 <!-- ============================ SPEAKING ============================ -->
-<section id="speaking" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <p class="eyebrow">Speaking</p>
-    <h2 class="sec">From the lecture hall to the state capitol.</h2>
-    <p class="sec-intro">Morgan speaks to universities, agencies, clinicians, and movement spaces about drugs, prisons, harm reduction, and the people behind the data.</p>
-    <ul class="talks reveal">
-      <li><span class="venue2">Yale University</span> — SEICHE Center for Health &amp; Justice <span class="when">2023</span><div class="topic">Addiction &amp; the criminal-legal system</div></li>
-      <li><span class="venue2">National Institutes of Health</span> — Criminal-Legal Subgroup <span class="when">2024</span><div class="topic">Decriminalization &amp; recriminalization in Oregon</div></li>
-      <li><span class="venue2">National Academy of Medicine</span> <span class="when">2022</span><div class="topic">Invited lecture</div></li>
-      <li><span class="venue2">European Union Drugs Agency</span> — Lisbon <span class="when">2025</span><div class="topic">Four talks at the Drug-Related Deaths meeting</div></li>
-      <li><span class="venue2">VinUniversity</span> — Hanoi, Vietnam <span class="when">2025</span><div class="topic">Emerging science on drug use &amp; addiction</div></li>
-      <li><span class="venue2">Oregon Legislature</span> — Joint Committee on Addiction &amp; Public Safety <span class="when">2023</span><div class="topic">The state of affairs on substance use</div></li>
-      <li><span class="venue2">Drug Policy Alliance</span> — Reform Conference <span class="when">2022</span><div class="topic">When facts fail · community-driven research</div></li>
-      <li><span class="venue2">National Harm Reduction Coalition</span> — San Juan <span class="when">2022</span><div class="topic">People with lived &amp; living experience as researchers</div></li>
-      <li><span class="venue2">Arizona State University</span> — Drugs &amp; Public Safety Symposium <span class="when">2023</span></li>
-      <li><span class="venue2">College on Problems of Drug Dependence</span> — New Orleans <span class="when">2025</span></li>
-      <li><span class="venue2">New York Society of Addiction Medicine</span> — keynote <span class="when">2021</span></li>
-      <li><span class="venue2">Lisbon Addictions</span> <span class="when">2024</span><div class="topic">Law-enforcement experiences after Measure 110</div></li>
-    </ul>
-    <a class="morelink" href="#connect">Invite Morgan to speak →</a>
-  </div>
-</section>
+<!-- Full Speaking & Consulting menu now lives on speaking.html; the homepage teases it via the #hire band near the top. -->
+
 
 <!-- ============================ PRESS ============================ -->
 <section id="press">
@@ -752,11 +770,12 @@ document.documentElement.classList.add('js');
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 
   // scrollspy
-  var navMap={}; document.querySelectorAll('.nav-links a').forEach(function(a){var id=a.getAttribute('href');if(id&&id.charAt(0)==='#'){navMap[id.slice(1)]=a;}});
+  var navMap={}; document.querySelectorAll('.nav-links a').forEach(function(a){var id=a.getAttribute('href');if(id&&id.charAt(0)==='#'){(navMap[id.slice(1)]=navMap[id.slice(1)]||[]).push(a);}});
+  var allNav=[]; Object.keys(navMap).forEach(function(k){allNav=allNav.concat(navMap[k]);});
   var spy=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ Object.values(navMap).forEach(function(a){a.classList.remove('active');}); var a=navMap[e.target.id]; a&&a.classList.add('active'); } });
+    entries.forEach(function(e){ if(e.isIntersecting){ allNav.forEach(function(a){a.classList.remove('active');}); (navMap[e.target.id]||[]).forEach(function(a){a.classList.add('active');}); } });
   },{rootMargin:'-45% 0px -50% 0px'});
-  ['about','research','writing','listen','speaking','press','cv'].forEach(function(id){var el=document.getElementById(id);el&&spy.observe(el);});
+  ['about','hire','research','writing','listen','press','cv'].forEach(function(id){var el=document.getElementById(id);el&&spy.observe(el);});
 
   // back to top
   var tt=document.getElementById('totop');
