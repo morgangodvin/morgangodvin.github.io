@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found — Morgan Godvin</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#f4f4ef" />
+<script>
+// Redirect legacy Squarespace URLs (still in search indexes) to their new homes.
+(function(){
+  var p = window.location.pathname.toLowerCase().replace(/\/+$/,'');
+  var map = {
+    '/media-appearances': '/media.html',
+    '/portfolio': '/writing.html',
+    '/prison-writings': '/writing.html',
+    '/blog': '/writing.html',
+    '/images': '/',
+    '/contact-me': '/#connect',
+    '/contact': '/#connect',
+    '/about': '/#about',
+    '/press': '/media.html',
+    '/home': '/'
+  };
+  if (map[p]) { window.location.replace(map[p]); return; }
+  // Old Squarespace collections had nested item URLs — send those to the section root.
+  if (p.indexOf('/blog/') === 0 || p.indexOf('/prison-writings/') === 0 || p.indexOf('/portfolio/') === 0) { window.location.replace('/writing.html'); return; }
+  if (p.indexOf('/media-appearances/') === 0) { window.location.replace('/media.html'); return; }
+})();
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f3fd6'/%3E%3Cstop offset='1' stop-color='%23d6177a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='69' font-family='system-ui,Helvetica,Arial,sans-serif' font-size='45' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EMG%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#f4f4ef; --paper:#ffffff; --ink:#12121a; --muted:#5a5a66;
+  --cobalt:#1f3fd6; --magenta:#d6177a; --line:#dcdce4; --cobalt-tint:#eceffc;
+  --serif:'Spectral',Georgia,serif; --display:'Bricolage Grotesque',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+.wrap{max-width:680px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);background:var(--paper)}
+.brand{display:inline-block;font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;padding:16px 0}
+.brand .dot{color:var(--cobalt)}
+main{flex:1;display:flex;align-items:center;padding:60px 0}
+.code{font-family:var(--mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--magenta);margin:0 0 14px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,6vw,3.2rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 16px}
+p{color:var(--muted);max-width:52ch;margin:0 0 26px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em;text-transform:uppercase;color:var(--cobalt);text-decoration:none;border:1px solid var(--line);background:var(--paper);padding:9px 15px;border-radius:999px}
+.links a:hover{background:var(--cobalt-tint)}
+.links a.solid{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.links a.solid:hover{background:#172fb0}
+footer{border-top:1px solid var(--line);padding:22px 0;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="/">Morgan Godvin<span class="dot">.</span></a></div></header>
+<main>
+  <div class="wrap">
+    <p class="code">404 · Not found</p>
+    <h1>This page moved when the site did.</h1>
+    <p>morgangodvin.com was rebuilt in 2026, and some older links didn't survive the move. What you're after is almost certainly one of these:</p>
+    <div class="links">
+      <a class="solid" href="/">Home</a>
+      <a href="/writing.html">Writing</a>
+      <a href="/media.html">Media appearances</a>
+      <a href="/speaking.html">Speaking &amp; consulting</a>
+      <a href="/bio.html">Bio &amp; headshot</a>
+      <a href="/#research">Research</a>
+      <a href="/#connect">Contact</a>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap">© 2026 Morgan Godvin · Portland, Oregon</div></footer>
+</body>
+</html>
